@@ -24,4 +24,4 @@ class Router {
   }
 }
 
-export default new Router()
+export default Router

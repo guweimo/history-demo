@@ -3,7 +3,7 @@
  * @version v0.0.1
  */
 
-const log = console.log.bind(console)
+window.log = console.log.bind(console)
 
 export const e = function(selector) {
   return document.querySelector(selector)

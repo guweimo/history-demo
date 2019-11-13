@@ -1,29 +1,21 @@
 import { e } from './util/dom'
-import { registerHook } from '.util'
+import { registerHook, pushState, replaceState } from '.util'
 
 class Router {
   constructor(options) {
     this.$dom = e('#mx-app')
     this.options = options
+    this.routes = options.routes
     this.beforeHooks = []
     this.afterHooks = []
   }
 
   push(path, params) {
-    if (!path) {
-      console.error('path not found')
-      return false
-    }
-
-    window.history.pushState(null, '', path)
+    pushState(path)
   }
 
   replace(path, params) {
-    if (!path) {
-      console.error('path not found')
-      return false
-    }
-    window.history.replaceState(null, '', path)
+    replaceState(path)
   }
 
   go(number) {

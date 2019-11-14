@@ -15,21 +15,3 @@ export const getLocation = (base) => {
   }
   return (path || '/') + window.location.search + window.location.hash
 }
-
-export const pushState = (url, replace=false) => {
-  if (!url) {
-    console.error('path not found')
-    return false
-  }
-  let history = window.history
-  let state = 'pushState'
-  if (replace) {
-    state = 'replaceState'
-  }
-
-  history[state]({}, '', url)
-}
-
-export const replaceState = (url) => {
-  pushState(url, true)
-}
